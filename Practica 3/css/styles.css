@@ -1,0 +1,40 @@
+body{
+    background-color: black;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8DSvxaDD9A9Wq84GBuf4GiPFl5AzteiCkzBWU8J0qtgExRa3Z);
+    background-repeat: no-repeat;
+    background-size: cover;
+   /* background-position: center center;*/
+    color: white;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+   font-size: 52px;
+   text-align: center;
+}
+
+h2 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-weight: normal;
+}
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+.destacado { 
+    font-weight: 700;
+ }
+ ol li {
+     font-weight: bold;
+ }
+ ul {
+     background-color: red;
+ }
+
+ ul li {
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+ }

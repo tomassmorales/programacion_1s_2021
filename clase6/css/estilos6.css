@@ -1,0 +1,56 @@
+*{
+    /*lo que se le dice al asterisco se le dice a todos los
+    elementos de la pagina*/
+    box-sizing: border-box; /* con esto le decimos que tome 
+    los borders también como parte de la caja para
+    ajustar mejor las dimensiones de la caja*/
+    /*al asterisco se le dice lo minimo posible por que afecta
+    a todo el codigo*/
+}
+/*hacemos que se peguen los elementos al margen del body*/
+nav {
+    background-color: green;
+}
+
+nav ul {
+    margin: 0;
+}
+
+body{
+    /*border: dotted 10px violet;*/
+    /*padding: 10px;*/
+    margin: 0;
+}
+
+p {
+    background-color: blueviolet;
+    color: white;
+  /*  width: 50%;
+    height: 100px;*/
+   max-width: 600px;
+   min-height: 200px; 
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.404);/*para sombras*/
+   margin: 0 0 0 15px; /*controlamos margenes con los demas elementos
+   limitrofes*/
+   /*max y min le dan la propiedad al bloque de ajustarse 
+en relacion al contenido del mismo*/
+}
+.conRelleno { 
+    padding: 30px 15px 5px 20px; /*
+    orden: arriba, derecha, abajo, izquierda
+    */
+    width: 50%;
+    border: solid 10px  orange;
+    border-radius:0 50px 25px 100%; /*cada valor es para un rincon de la caja*/
+}
+p.segundo {
+    width: 50%;
+    padding: 20px;
+    min-height: 200px;
+}
+
+a {
+    background-color: violet;
+    width: 400px;
+    height: 100px;
+}

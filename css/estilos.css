@@ -1,0 +1,55 @@
+/*
+Regla de estilo CSS - definir que valores va a tomar el selector
+
+selector { 
+    propiedad/es: valor/es;
+ }
+
+selector son las etiquetas del codigo escrito en html
+
+*/
+
+/*para etiquetas generales*/
+body{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: monospace;
+    background-image: url(https://wallpaperaccess.com/thumb/1268183.jpg);
+    background-repeat: repeat;
+   /* background-size: cover;*/
+    background-position:center center;
+}
+
+h1 { 
+    background-color: grey;
+ }
+
+ p {
+     font-size: 20px;
+ }
+/*para class*/
+ .destacado { 
+     font-weight: bolder
+  }
+  
+/*para id, hay uno solo por pagina o documento*/
+  #listaUno {
+    color: red;
+  }
+
+/*selector combinado, que solo influya en un tipo de etiqueta que sea de una class*/
+ol.destacado {
+  font-style: italic;
+}
+/*selector decendiente, se especifica a los elementos en base a su ruta en el documento mismo*/
+nav ul li a {
+  color:white;
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+    background-color: rgb(87, 87, 167);
+}

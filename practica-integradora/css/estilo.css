@@ -1,0 +1,165 @@
+body.about {
+    font-family: 'Open Sans', sans-serif;
+    background-image:url("../img/about.jpg");
+    background-position:right top;
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+
+body.home {
+    font-family: 'Open Sans', sans-serif;
+    background-image:url("../img/home.jpg");
+    background-position:right top;
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+body.contacto{
+    font-family: 'Open Sans', sans-serif;
+}
+body.music {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("../img/music-top.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    background-position-y: -80px;
+}
+a{
+    color: rgb(172, 169, 169);
+    text-decoration: none;
+}
+a.menuitem{
+    color:rgb(22, 22, 22);
+    text-decoration: none;
+}
+nav.vertical ul {
+    list-style: none;
+}
+
+nav.horizontal{ 
+    background-color: rgba(255, 255, 255, 0.336); 
+    height: 80px;
+    width: 100%;
+ }
+
+nav ul.listah {
+    text-align: end;
+    list-style: none;
+    float: right;
+    margin-right: 20px ;
+}
+ul.listah {
+    text-align: end;
+    list-style: none;
+    float: right;
+    margin-right: 20px ;
+}
+nav ul.listah li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+ul.listah li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+h3.about, h4.about {
+    color: rgb(125, 224, 199);
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+h1 {
+   font-size: 50px;
+   margin-left: 10px;
+   font-family: 'Raleway', sans-serif;
+}
+
+h1.index {
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, 0.315);
+}
+
+h2.indexh2 {
+    margin-left: 35px;
+    font-size: 25px ;
+    font-family: 'Work Sans', sans-serif;
+}
+
+p.iconabout {
+    text-align: right;
+    line-height: normal;
+    background-color: transparent;
+    margin-left: 400px;
+    margin-right: 20px;
+}
+
+p.menucontacto { 
+    text-align: end;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+p.menumusic { 
+    text-align: end;
+    margin-right: 50px;
+    margin-top: 50px;
+    background-color:rgba(255, 255, 255, 0.315);
+    height: 50px;
+    width: 100%;
+}
+ul li.contactlist {
+    list-style: none;
+    text-align: right;
+    margin-right: 50px;
+}
+ul li.musiclist {
+    list-style: none;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+h3 {
+  margin-left: 10px;
+}
+h3.verde{
+    color: rgb(125, 224, 199);
+}
+iframe.ubicacion { 
+    height: 450px;
+    width: 100%;
+ }
+ ul.infoc {
+     list-style: none;
+ }
+
+ ul {
+    list-style: none;
+ }
+
+ ul li.dl {
+     font-size: 12px;
+ }
+ ul.ref {
+  list-style:decimal-leading-zero;
+ }
+ ul.ref li {
+     font-size: 15px;
+ }
+ p.directlinks {
+     font-size: 15px;
+ }
+
+ a.gotop {
+     font-size: 14px;
+ }
+
+ iframe.videos {
+    width:640px;
+    height: 360px;
+ }
+
+ p.info {
+     font-size: 14px;
+ }
