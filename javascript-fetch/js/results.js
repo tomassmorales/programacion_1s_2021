@@ -1,5 +1,16 @@
 window.addEventListener("load", function(){
 
+
+    let misFavs = document.querySelector(`#favo`);
+    let storageFavs = localStorage.getItem(`favoritos`);
+    let favsRecup = JSON.parse(storageFavs);
+
+    if(favsRecup.length === 0) {
+    misFavs.style.display = "none";
+    }else {
+     misFavs.style.display = "inline"; 
+    }
+
     let seccionResultados = document.querySelector(".search-results");
 
     let queryString = location.search;

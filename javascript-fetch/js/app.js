@@ -1,10 +1,20 @@
 window.addEventListener("load", function(){
 
-    let numeroGifs = Number (prompt("¿Cuantos resultados quieres ver?"));
+    //let numeroGifs = Number (prompt("¿Cuantos resultados quieres ver?"));
+
+    let misFavs = document.querySelector(`#favo`);
+    let storageFavs = localStorage.getItem(`favoritos`);
+    let favsRecup = JSON.parse(storageFavs);
+
+    if(favsRecup.length === 0) {
+    misFavs.style.display = "none";
+    }else {
+     misFavs.style.display = "inline"; 
+    }
 
     let tendenciasLista = document.querySelector("#trending article ul");
 
-    fetch(`https://api.giphy.com/v1/gifs/trending?api_key=R3eF22FOKmH2tZCWRO86VlPu7ZYOOxnN&limit=${numeroGifs}&rating=g`)
+    fetch(`https://api.giphy.com/v1/gifs/trending?api_key=R3eF22FOKmH2tZCWRO86VlPu7ZYOOxnN&limit=5&rating=g`)
     .then(function(response){
         return response.json();
     })

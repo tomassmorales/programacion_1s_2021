@@ -8,9 +8,9 @@ window.addEventListener("load", function () {
 
     let favoritos = [];
     let recuperoStorage = localStorage.getItem(`favoritos`);
-    
+
     //Si hay elementos dentro lo pasamos a JSON para 
-    if (recuperoStorage !== null){
+    if (recuperoStorage !== null) {
         favoritos = JSON.parse(recuperoStorage);
     }
 
@@ -45,39 +45,45 @@ window.addEventListener("load", function () {
 
             //Si el id de este gif se incluye en el array mostramos el boton de quitar
             //Si no esta mostramos el de agregar
-            if (favoritos.includes(id)){
-                informacionGif.innerHTML += `
-                <a href="" class="sacarFav">Quitar de favoritos</a>
-                `;
-            }else {
-                informacionGif.innerHTML += `
-                <a href="" class="fav">Agregar a favoritos</a>
-                `;
-            }
 
-            let botonAgregar = document.querySelector(`.fav`);
+            let sacarFav = document.querySelector(`#sacarFav`);
+            let agregarFav = document.querySelector(`#fav`)
 
-            botonAgregar.addEventListener("click", function(e){
-                e.preventDefault();
-                favoritos.push(`${id}`);
-                botonAgregar.classList.remove(`fav`);
-                botonAgregar.classList.add(`sacarFav`);
-                botonAgregar.innerText = `Quitar de la lista`;
-                console.log(favoritos);
-            })
-
-            let botonQuitar = document.querySelector(`.sacarFav`);
-                botonQuitar.addEventListener ("click", function(e){
+            if (favoritos.includes(id)) {
+                agregarFav.style.display = "none";
+                sacarFav.addEventListener("click", function (e) {
                     e.preventDefault();
                     let gifEliminar = favoritos.indexOf(`${id}`);
                     favoritos.splice(gifEliminar, 1);
-                })
+                    agregarFav.style.display = "inline";
+                    sacarFav.style.display = "none";
+                    console.log(favoritos);
 
-            let stringFavs = JSON.stringify(favoritos);
-            console.log(stringFavs);
-            localStorage.setItem(`favoritos`, stringFavs);
+                    console.log(favoritos);
+                    let stringFavs = JSON.stringify(favoritos);
+                    console.log(stringFavs);
+                    localStorage.setItem(`favoritos`, stringFavs);
+                    console.log(recuperoStorage);
+                })
+            } else {
+                sacarFav.style.display = "none";
+                agregarFav.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    favoritos.push(`${id}`);
+                    console.log(favoritos);
+                    sacarFav.style.display = "inline";
+                    agregarFav.style.display = "none";
+
+                    console.log(favoritos);
+                    let stringFavs = JSON.stringify(favoritos);
+                    console.log(stringFavs);
+                    localStorage.setItem(`favoritos`, stringFavs);
+                    console.log(recuperoStorage);
+                })
+            }
         })
         .catch(function (error) {
             console.log(error);
         })
+
 })
