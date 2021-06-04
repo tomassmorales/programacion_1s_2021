@@ -43,33 +43,39 @@ window.addEventListener("load", function () {
             `
             }
 
+            //Si el id de este gif se incluye en el array mostramos el boton de quitar
+            //Si no esta mostramos el de agregar
             if (favoritos.includes(id)){
                 informacionGif.innerHTML += `
                 <a href="" class="sacarFav">Quitar de favoritos</a>
                 `;
-                let botonQuitar = document.querySelector(`.sacarFav`);
+            }else {
+                informacionGif.innerHTML += `
+                <a href="" class="fav">Agregar a favoritos</a>
+                `;
+            }
+
+            let botonAgregar = document.querySelector(`.fav`);
+
+            botonAgregar.addEventListener("click", function(e){
+                e.preventDefault();
+                favoritos.push(`${id}`);
+                botonAgregar.classList.remove(`fav`);
+                botonAgregar.classList.add(`sacarFav`);
+                botonAgregar.innerText = `Quitar de la lista`;
+                console.log(favoritos);
+            })
+
+            let botonQuitar = document.querySelector(`.sacarFav`);
                 botonQuitar.addEventListener ("click", function(e){
                     e.preventDefault();
                     let gifEliminar = favoritos.indexOf(`${id}`);
                     favoritos.splice(gifEliminar, 1);
                 })
-            }else {
-                informacionGif.innerHTML += `
-                <a href="" class="fav">Agregar a favoritos</a>
-                `;
-                let botonAgregar = document.querySelector(`.fav`);
 
-                botonAgregar.addEventListener("click", function(e){
-                    e.preventDefault();
-                    favoritos.push(`${id}`);
-                    botonAgregar.classList.remove(`fav`);
-                    botonAgregar.classList.add(`sacarFav`);
-                    botonAgregar.innerText = `Quitar de la lista`;
-                    console.log(favoritos);
-                })
-            }
-
-            let stringFavs = JSON.stringify
+            let stringFavs = JSON.stringify(favoritos);
+            console.log(stringFavs);
+            localStorage.setItem(`favoritos`, stringFavs);
         })
         .catch(function (error) {
             console.log(error);
