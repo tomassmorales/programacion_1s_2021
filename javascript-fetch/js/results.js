@@ -10,8 +10,8 @@ window.addEventListener("load", function(){
         emailUsuario = JSON.parse(recuperoEmail);
         console.log(emailUsuario);
     }
-    
-    if (emailUsuario !== null){
+
+    if (emailUsuario !== "" || emailUsuario !== null){
         botonLog.style.display = "none";
     }
 
@@ -19,7 +19,7 @@ window.addEventListener("load", function(){
     let storageFavs = localStorage.getItem(`favoritos`);
     let favsRecup = JSON.parse(storageFavs);
 
-    if(favsRecup.length === 0) {
+    if(storageFavs === null || favsRecup.length === 0) {
     misFavs.style.display = "none";
     }else {
      misFavs.style.display = "inline"; 

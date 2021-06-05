@@ -14,16 +14,24 @@ window.addEventListener("load", function(){
     console.log(sessionStorage.getItem(`usuario`));
 
     let loguearse = document.querySelector(`#log`);
+    let logOut = document.querySelector(`#logOut`);
+
+    logOut.addEventListener("click", function(){
+        localStorage.clear();
+        sessionStorage.clear();
+    })
 
     if (email !== null){
         loguearse.style.display = "none";
+    }else {
+        logOut.style.display = "none";
     }
 
     let misFavs = document.querySelector(`#favo`);
     let storageFavs = localStorage.getItem(`favoritos`);
     let favsRecup = JSON.parse(storageFavs);
 
-    if(favsRecup.length === 0) {
+    if(storageFavs === null || favsRecup.length === 0) {
     misFavs.style.display = "none";
     }else {
      misFavs.style.display = "inline"; 
