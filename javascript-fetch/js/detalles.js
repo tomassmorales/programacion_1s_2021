@@ -1,5 +1,24 @@
 window.addEventListener("load", function () {
 
+    let recuperoEmail = sessionStorage.getItem(`usuario`);
+
+    let emailUsuario;
+    
+    if (recuperoEmail !== null){
+        emailUsuario = JSON.parse(recuperoEmail);
+        console.log(emailUsuario);
+    }
+
+    let misFavs = document.querySelector(`#favo`);
+    let storageFavs = localStorage.getItem(`favoritos`);
+    let favsRecup = JSON.parse(storageFavs);
+
+    if(favsRecup.length === 0) {
+    misFavs.style.display = "none";
+    }else {
+     misFavs.style.display = "inline"; 
+    }
+
     let informacionGif = document.querySelector(`#info`)
 
     let queryString = location.search;
@@ -47,10 +66,14 @@ window.addEventListener("load", function () {
             //Si no esta mostramos el de agregar
 
             let sacarFav = document.querySelector(`#sacarFav`);
-            let agregarFav = document.querySelector(`#fav`)
+            let agregarFav = document.querySelector(`#fav`);
+            let botonLog = document.querySelector(`#log`);
+
+            if (emailUsuario !== null){
 
             if (favoritos.includes(id)) {
                 agregarFav.style.display = "none";
+                botonLog.style.display = "none";
                 sacarFav.addEventListener("click", function (e) {
                     e.preventDefault();
                     let gifEliminar = favoritos.indexOf(`${id}`);
@@ -67,6 +90,7 @@ window.addEventListener("load", function () {
                 })
             } else {
                 sacarFav.style.display = "none";
+                botonLog.style.display = "none"
                 agregarFav.addEventListener("click", function (e) {
                     e.preventDefault();
                     favoritos.push(`${id}`);
@@ -81,6 +105,10 @@ window.addEventListener("load", function () {
                     console.log(recuperoStorage);
                 })
             }
+        }else {
+            sacarFav.style.display = "none";
+            agregarFav.style.display = "none";
+        }
         })
         .catch(function (error) {
             console.log(error);

@@ -1,5 +1,19 @@
 window.addEventListener("load", function(){
 
+    let recuperoEmail = sessionStorage.getItem(`usuario`);
+
+    let botonLog = document.querySelector(`#log`);
+
+    let emailUsuario;
+
+    if (recuperoEmail !== null){
+        emailUsuario = JSON.parse(recuperoEmail);
+        console.log(emailUsuario);
+    }
+    
+    if (emailUsuario !== null){
+        botonLog.style.display = "none";
+    }
 
     let misFavs = document.querySelector(`#favo`);
     let storageFavs = localStorage.getItem(`favoritos`);

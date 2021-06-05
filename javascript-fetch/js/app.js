@@ -2,6 +2,23 @@ window.addEventListener("load", function(){
 
     //let numeroGifs = Number (prompt("¿Cuantos resultados quieres ver?"));
 
+    let queryStringEmail = location.search;
+    let emailStringObj = new URLSearchParams(queryStringEmail);
+    let email = emailStringObj.get(`q`);
+
+    console.log(email);
+
+    let emailUsuario = JSON.stringify(email)
+    sessionStorage.setItem(`usuario`, emailUsuario);
+
+    console.log(sessionStorage.getItem(`usuario`));
+
+    let loguearse = document.querySelector(`#log`);
+
+    if (email !== null){
+        loguearse.style.display = "none";
+    }
+
     let misFavs = document.querySelector(`#favo`);
     let storageFavs = localStorage.getItem(`favoritos`);
     let favsRecup = JSON.parse(storageFavs);
