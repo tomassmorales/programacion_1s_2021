@@ -88,5 +88,45 @@ window.addEventListener("load", function(){
         })
     })
 
+    let formulario = document.querySelector("form");
+    let campoBuscador = document.querySelector("[name=q]");
+    let campoVacio = document.querySelector("#campoVacio");
+    let masDeTres = document.querySelector("#masDeTres");
+    let ok = document.querySelector("#ok");
 
+    formulario.addEventListener("submit", function(e){
+        e.preventDefault();
+        if (campoBuscador.value == "" || campoBuscador.value == " "){
+            campoVacio.style.display = "inline";
+            masDeTres.style.display = "none";
+        }else if (campoBuscador.value.length < 3){
+            masDeTres.style.display = "inline";
+            campoVacio.style.display = "none";
+        }
+        else{
+            this.submit();
+        }
+    })
+
+    campoBuscador.addEventListener ("input", function(){
+        if (campoBuscador.value == "" || campoBuscador.value == " "){
+            campoVacio.style.display = "inline";
+            masDeTres.style.display = "none";
+            ok.style.display = "none";
+        }else if (campoBuscador.value.length < 3){
+            masDeTres.style.display = "inline";
+            campoVacio.style.display = "none";
+            ok.style.display = "none";
+        }else{
+            ok.style.display = "inline";
+            campoVacio.style.display = "none";
+            masDeTres.style.display = "none";
+        }
+    })
+
+    campoBuscador.addEventListener("blur", function(){
+        campoVacio.style.display = "none";
+        masDeTres.style.display = "none";
+        ok.style.display = "none";
+    })
 })
